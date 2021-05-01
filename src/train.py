@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 from torchvision import transforms
 # import matplotlib.animation as animation
 from . import model
-import wandb
+# import wandb
 from .utils import general
 from .utils.dataset import Dataset, load_imagelist_landmark
 
@@ -129,8 +129,6 @@ else:
     netD_ckpt = torch.load(fname, map_location="cpu")
     netD.load_state_dict(netD_ckpt)
 
-    # TODO - check argument match
-
 
 
 netG.to(device)
@@ -172,41 +170,41 @@ def next_batch():
     # n = transform(n)
     return [a, n]
 
-def process_image_for_log(name, orig, syn, modify, mask, num_log):
-    # global run
-    orig = general.to_numpy(orig)
-    orig = np.transpose(orig, [0, 2, 3, 1])
+# def process_image_for_log(name, orig, syn, modify, mask, num_log):
+    # # global run
+    # orig = general.to_numpy(orig)
+    # orig = np.transpose(orig, [0, 2, 3, 1])
 
-    syn = general.to_numpy(syn)
-    syn = np.transpose(syn, [0, 2, 3, 1])
+    # syn = general.to_numpy(syn)
+    # syn = np.transpose(syn, [0, 2, 3, 1])
 
-    modify = general.to_numpy(modify)
-    modify = np.transpose(modify, [0, 2, 3, 1])
+    # modify = general.to_numpy(modify)
+    # modify = np.transpose(modify, [0, 2, 3, 1])
 
-    mask = general.to_numpy(mask)
-    mask = np.transpose(mask, [0, 2, 3, 1])
-    mask = mask[:, :, :, 0]
+    # mask = general.to_numpy(mask)
+    # mask = np.transpose(mask, [0, 2, 3, 1])
+    # mask = mask[:, :, :, 0]
 
     # log = {}
-    figs = []
-    for i in range(num_log):
-        fig, axes = plt.subplots(ncols=4, figsize=[16, 4])
-        axes[0].imshow(orig[i])
-        axes[0].set_title("origin")
-        axes[1].imshow(syn[i])
-        axes[1].set_title("syn")
-        axes[2].imshow(modify[i])
-        axes[2].set_title("modify")
-        axes[3].imshow(mask[i], cmap='gray')
-        axes[3].set_title("mask")
+    # # figs = []
+    # for i in range(num_log):
+        # fig, axes = plt.subplots(ncols=4, figsize=[16, 4])
+        # axes[0].imshow(orig[i])
+        # axes[0].set_title("origin")
+        # axes[1].imshow(syn[i])
+        # axes[1].set_title("syn")
+        # axes[2].imshow(modify[i])
+        # axes[2].set_title("modify")
+        # axes[3].imshow(mask[i], cmap='gray')
+        # axes[3].set_title("mask")
 
-        figs.append(fig)
+        # # figs.append(fig)
 
         # log["%s_%d" % (name, i)] = wandb.Image(fig)
 
     # plt.close('all')
 
-    return figs
+    # return log
 
 def train_D(acne_images, no_acne_images, log_prefix=""):
     log_dict = {}
