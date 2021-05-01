@@ -10,9 +10,7 @@ The ACNE04 images can be downloaded from [here](https://drive.google.com/drive/f
 
 Please download the Classification.tar and unzip it in the data folder.
 
-The extracted facial landmarks can be downloaded from [here](https://northeastern-my.sharepoint.com/:u:/g/personal/lu_zij_northeastern_edu/EcFYTILHf-BElHdainh35QIB4UMwvVUy91UqTjbvlu30IA?e=uXT7e2).
-
-Unzipping the file will create a `Results` folder under `data`.
+The extracted facial landmarks are stored in `data/Results`.
 
 
 To train the model, you can use command: 
