@@ -14,6 +14,8 @@ Please download the Classification.tar and unzip it in the data folder.
 
 The extracted facial landmarks are stored in `data/Results`.
 
+`ckpt` folder contains a checkpoint of a pretrained Generator.
+
 ----------------------------------------------------
 To train the model, you can use command: 
 
