@@ -37,3 +37,7 @@ python -m src.inference \
 ```
 It will randomly choose a patch, add acnes to the patch and save the modified full face image and a patch comparison figure to `save_dir`. With `--num_patch X`, it will randomly sample X patches and generate X modifications.
 
+## Cite as:
+Lu, Z & Krishnamurthy, S (2021). 
+SkinGAN: Medical image Synthetic data generation using Generative methods
+
